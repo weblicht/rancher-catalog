@@ -1,0 +1,25 @@
+tb:
+  privileged: true
+  volumes:
+   - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  image: weblicht/tb
+
+sds:
+  privileged: true
+  volumes:
+   - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  image: weblicht/sds
+
+mdm:
+  privileged: true
+  volumes:
+   - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  image: weblicht/mdm
+
+primary-mdm:
+  privileged: true
+  volumes:
+   - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  image: weblicht/mdm
+  command: /usr/sbin/init
+  entrypoint: /run_mdm_and_configure.sh
