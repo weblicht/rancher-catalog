@@ -11,6 +11,7 @@ db:
   - ${DIR}/db:/var/lib/mysql
   labels:
     registry.portus.db: 1
+    io.rancher.scheduler.affinity:host_label: registry.host=true
 sslproxy:
   image: nginx:1.9.9
   tty: true
