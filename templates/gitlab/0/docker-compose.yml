@@ -1,6 +1,5 @@
 gitlab-server:
   labels:
-    io.rancher.sidekicks: gitlab-data
     io.rancher.scheduler.affinity:host_label: gitlab.host=true
   hostname: ${gitlab_hostname}
   image: gitlab/gitlab-ce:latest
