@@ -1,0 +1,20 @@
+gitlab-server:
+  labels:
+    io.rancher.sidekicks: gitlab-data
+    io.rancher.scheduler.affinity:host_label: gitlab.host=true
+  hostname: ${gitlab_hostname}
+  image: gitlab/gitlab-ce:latest
+  volumes:
+  - /data/gitlab/config/:/etc/gitlab
+  - /data/gitlab/logs/:/var/log/gitlab
+  - /data/gitlab/data/:/var/opt/gitlab
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+    external_url '${gitlab_external_url}'
+    nginx['listen_port'] = 80
+    nginx['listen_https'] = false
+    nginx['proxy_set_headers'] = {
+      "X-Forwarded-Proto" => "https",
+      "X-Forwarded-Ssl" => "on"
+    }
+
