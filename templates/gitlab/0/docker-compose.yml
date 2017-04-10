@@ -16,4 +16,5 @@ gitlab-server:
         "X-Forwarded-Proto" => "https",
         "X-Forwarded-Ssl" => "on"
       }
+      gitlab_rails['gitlab_shell_ssh_port'] = 2222 
 
