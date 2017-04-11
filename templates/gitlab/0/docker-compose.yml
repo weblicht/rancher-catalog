@@ -10,6 +10,7 @@ gitlab-server:
   environment:
     GITLAB_OMNIBUS_CONFIG: |
       external_url '${gitlab_external_url}'
+      registry_external_url '${gitlab_registry_url}'
       nginx['listen_port'] = 80
       nginx['listen_https'] = false
       nginx['proxy_set_headers'] = {

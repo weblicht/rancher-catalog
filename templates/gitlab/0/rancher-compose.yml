@@ -20,6 +20,13 @@
       default: 'https://'
       required: true
       type: "string"
+    - variable: "gitlab_registry_url"
+      label: "Gitlab registry_external_url:"
+      description: |
+        This is for the built-in docker registry
+      default: 'https://'
+      required: true
+      type: "string"
     - variable: "smtp_google_account"
       label: "gmail account to send notifiactions:"
       description: |
