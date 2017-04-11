@@ -20,6 +20,19 @@
       default: 'https://'
       required: true
       type: "string"
+    - variable: "smtp_google_account"
+      label: "gmail account to send notifiactions:"
+      description: |
+        This is needed to send notifications to users 
+      default: 'gitlab@gmail.com' 
+      required: true
+      type: "string"
+    - variable: "smtp_google_password"
+      label: "gmail account password" 
+      description: |
+        This is needed to send notifications to users 
+      required: true
+      type: "string"
 
 gitlab-server:
   scale: 1
